@@ -1,0 +1,412 @@
+// Karel submission — do not remove the header or the function wrappers.
+// assignment: lesson-07
+//
+// Each problem below is wrapped in an outer function that returns its
+// main(k), so your instructor's grader can run and grade every one.
+
+// ──────────────────────────────────────────────────────────
+// Problem 1: simple (Easy)
+// ──────────────────────────────────────────────────────────
+function problem_1() {
+function moveN(k, n) {
+  for (let i = 0; i < n; i++){
+    k.move();
+  }
+}
+
+function main(k) {
+  moveN(k, 4);
+  k.turnLeft();
+  moveN(k, 3);
+}
+  return main;
+}
+
+// ──────────────────────────────────────────────────────────
+// Problem 2: moderate (Medium)
+// ──────────────────────────────────────────────────────────
+function problem_2() {
+function turnRight(k) {
+  for (let i = 0; i < 3; i++) {
+    k.turnLeft();
+  }
+}
+
+function turnAround(k) {
+  k.turnLeft();
+  k.turnLeft();
+}
+
+function drawBar(k, height) {
+  for (let i = 0; i < height; i++) {
+    k.putBeeper();
+    k.move();
+    }
+    turnAround(k);
+    for (let i = 0; i < height; i++) {
+     k.move();
+     }
+}
+function LeftGo(k) {
+  k.turnLeft();
+  k.move();
+  k.turnLeft();
+}
+function PlaceMove(k) {
+  k.putBeeper();
+  k.move();
+  k.putBeeper();
+  k.move();
+  k.putBeeper();
+  k.move();
+  k.putBeeper();
+  k.move();
+  k.putBeeper();
+  turnAround(k);
+  k.move();
+  k.move();
+  k.move();
+  k.move();
+  turnAround(k);
+}
+function main(k) {
+  k.turnLeft();
+  drawBar(k, 2);
+  LeftGo(k);
+  drawBar(k, 4);
+  LeftGo(k);
+  drawBar(k, 3);
+  LeftGo(k);
+  drawBar(k, 1);
+  LeftGo(k);
+  PlaceMove(k);
+}
+  return main;
+}
+
+// ──────────────────────────────────────────────────────────
+// Problem 3: complex (Difficult)
+// ──────────────────────────────────────────────────────────
+function problem_3() {
+function turnRight(k) {
+    for (let i = 0; i < 3; i++) {
+        k.turnLeft();
+    }
+}
+
+function turnAround(k) {
+    k.turnLeft();
+    k.turnLeft();
+}
+
+function paintN(k, c, n) {
+    for (let i = 0; i < n; i++) {
+        k.paintCorner(c);
+        if (i < n - 1) {
+            k.move();
+        }
+    }
+}
+
+function main(k) {
+    // Red bottom
+    paintN(k, "Red", 5);
+
+    // Face north
+    k.turnLeft();
+
+    // Blue right
+    paintN(k, "Blue", 4);
+
+    // Face west
+    k.turnLeft();
+
+    // Green top
+    paintN(k, "Green", 5);
+
+    // Face south
+    k.turnLeft();
+
+    // Yellow left
+    paintN(k, "Yellow", 3);
+}
+  return main;
+}
+
+// ──────────────────────────────────────────────────────────
+// Problem 4: hard (Hard)
+// ──────────────────────────────────────────────────────────
+function problem_4() {
+function turnRight(k) {
+  for (let i = 0; i < 3; i++) {
+    k.turnLeft();
+  }
+}
+
+function turnAround(k) {
+  k.turnLeft();
+  k.turnLeft();
+}
+function barheight(k, height){
+  for (let i = 0; i < height; i++) {
+  k.putBeeper();
+ if (i < height - 1) {
+  k.move();
+  }
+  } 
+       }
+       function turbo(k) {
+        k.move();
+        k.move();
+        k.move();
+        k.move();
+        k.move();
+        k.move();
+        k.move();
+       }
+       function moveleft(k) {
+        k.move();
+        k.turnLeft();
+       }
+  function main(k) {
+    barheight(k, 1);
+    moveleft(k);
+    barheight(k, 2);
+    turnAround(k);
+    moveleft(k);
+    moveleft(k);
+    barheight(k, 3);
+    turnAround(k);
+    k.move();
+    moveleft(k);
+    moveleft(k);
+    barheight(k, 4);
+    turnAround(k);
+    k.move();
+    k.move();
+    moveleft(k);
+    moveleft(k);
+    barheight(k, 3);
+    turnAround(k);
+    k.move();
+    moveleft(k);
+    moveleft(k);
+    barheight(k, 2);
+    turnAround(k);
+    moveleft(k);
+    moveleft(k);
+    barheight(k, 1);
+    turnRight(k);  
+    k.move();
+    turnAround(k); 
+    turbo(k);     
+    turnAround(k);        
+     }
+  return main;
+}
+// Karel submission — do not remove the header or the function wrappers.
+// assignment: lesson-07
+//
+// Each problem below is wrapped in an outer function that returns its
+// main(k), so your instructor's grader can run and grade every one.
+
+// ──────────────────────────────────────────────────────────
+// Problem 1: simple (Easy)
+// ──────────────────────────────────────────────────────────
+function problem_1() {
+function moveN(k, n) {
+  for (let i = 0; i < n; i++){
+    k.move();
+  }
+}
+
+function main(k) {
+  moveN(k, 4);
+  k.turnLeft();
+  moveN(k, 3);
+}
+  return main;
+}
+
+// ──────────────────────────────────────────────────────────
+// Problem 2: moderate (Medium)
+// ──────────────────────────────────────────────────────────
+function problem_2() {
+function turnRight(k) {
+  for (let i = 0; i < 3; i++) {
+    k.turnLeft();
+  }
+}
+
+function turnAround(k) {
+  k.turnLeft();
+  k.turnLeft();
+}
+
+function drawBar(k, height) {
+  for (let i = 0; i < height; i++) {
+    k.putBeeper();
+    k.move();
+    }
+    turnAround(k);
+    for (let i = 0; i < height; i++) {
+     k.move();
+     }
+}
+function LeftGo(k) {
+  k.turnLeft();
+  k.move();
+  k.turnLeft();
+}
+function PlaceMove(k) {
+  k.putBeeper();
+  k.move();
+  k.putBeeper();
+  k.move();
+  k.putBeeper();
+  k.move();
+  k.putBeeper();
+  k.move();
+  k.putBeeper();
+  turnAround(k);
+  k.move();
+  k.move();
+  k.move();
+  k.move();
+  turnAround(k);
+}
+function main(k) {
+  k.turnLeft();
+  drawBar(k, 2);
+  LeftGo(k);
+  drawBar(k, 4);
+  LeftGo(k);
+  drawBar(k, 3);
+  LeftGo(k);
+  drawBar(k, 1);
+  LeftGo(k);
+  PlaceMove(k);
+}
+  return main;
+}
+
+// ──────────────────────────────────────────────────────────
+// Problem 3: complex (Difficult)
+// ──────────────────────────────────────────────────────────
+function problem_3() {
+function turnRight(k) {
+    for (let i = 0; i < 3; i++) {
+        k.turnLeft();
+    }
+}
+
+function turnAround(k) {
+    k.turnLeft();
+    k.turnLeft();
+}
+
+function paintN(k, c, n) {
+    for (let i = 0; i < n; i++) {
+        k.paintCorner(c);
+        if (i < n - 1) {
+            k.move();
+        }
+    }
+}
+
+function main(k) {
+    // Red bottom
+    paintN(k, "Red", 5);
+
+    // Face north
+    k.turnLeft();
+
+    // Blue right
+    paintN(k, "Blue", 4);
+
+    // Face west
+    k.turnLeft();
+
+    // Green top
+    paintN(k, "Green", 5);
+
+    // Face south
+    k.turnLeft();
+
+    // Yellow left
+    paintN(k, "Yellow", 3);
+}
+  return main;
+}
+
+// ──────────────────────────────────────────────────────────
+// Problem 4: hard (Hard)
+// ──────────────────────────────────────────────────────────
+function problem_4() {
+function turnRight(k) {
+  for (let i = 0; i < 3; i++) {
+    k.turnLeft();
+  }
+}
+
+function turnAround(k) {
+  k.turnLeft();
+  k.turnLeft();
+}
+function barheight(k, height){
+  for (let i = 0; i < height; i++) {
+  k.putBeeper();
+ if (i < height - 1) {
+  k.move();
+  }
+  } 
+       }
+       function turbo(k) {
+        k.move();
+        k.move();
+        k.move();
+        k.move();
+        k.move();
+        k.move();
+        k.move();
+       }
+       function moveleft(k) {
+        k.move();
+        k.turnLeft();
+       }
+  function main(k) {
+    barheight(k, 1);
+    moveleft(k);
+    barheight(k, 2);
+    turnAround(k);
+    moveleft(k);
+    moveleft(k);
+    barheight(k, 3);
+    turnAround(k);
+    k.move();
+    moveleft(k);
+    moveleft(k);
+    barheight(k, 4);
+    turnAround(k);
+    k.move();
+    k.move();
+    moveleft(k);
+    moveleft(k);
+    barheight(k, 3);
+    turnAround(k);
+    k.move();
+    moveleft(k);
+    moveleft(k);
+    barheight(k, 2);
+    turnAround(k);
+    moveleft(k);
+    moveleft(k);
+    barheight(k, 1);
+    turnRight(k);  
+    k.move();
+    turnAround(k); 
+    turbo(k);     
+    turnAround(k);        
+     }
+  return main;
+}
